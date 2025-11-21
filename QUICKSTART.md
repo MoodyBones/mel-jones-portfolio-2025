@@ -4,14 +4,14 @@ Quick guide to get the project up and running locally.
 
 ## Prerequisites
 
-- **Node.js 12.x** - This project uses node-sass which requires Node 12
+- **Node.js 16.x or higher** - This project uses dart-sass which supports modern Node versions
 - **npm** - Comes with Node.js
 
 ## Setup
 
-### 1. Install Node 12
+### 1. Install Node
 
-This project uses Node.js version 12.22.12. We recommend using [nvm](https://github.com/nvm-sh/nvm) to manage Node versions.
+This project recommends Node.js version 16.20.2. We recommend using [nvm](https://github.com/nvm-sh/nvm) to manage Node versions.
 
 If you have nvm installed, simply run:
 
@@ -21,20 +21,20 @@ nvm use
 
 This will automatically use the Node version specified in `.nvmrc`.
 
-If you don't have Node 12 installed yet, install it with:
+If you don't have the recommended Node version installed yet, install it with:
 
 ```bash
-nvm install 12
-nvm use 12
+nvm install
+nvm use
 ```
 
 ### 2. Install Dependencies
 
 ```bash
-npm install
+npm ci
 ```
 
-This will install all dependencies based on the lockfile (`package-lock.json`), ensuring reproducible builds.
+This will install all dependencies using the exact versions specified in the lockfile (`package-lock.json`), ensuring reproducible builds.
 
 ### 3. Run Development Server
 
@@ -54,14 +54,14 @@ The site will be available at `http://localhost:8080` (or the port Gridsome assi
 
 ### Node Version Issues
 
-If you encounter errors related to node-sass or native modules, ensure you're using Node 12:
+If you encounter errors, ensure you're using a compatible Node version (16.x or higher):
 
 ```bash
 node --version
-# Should output: v12.22.12
+# Should output: v16.20.2 or higher
 ```
 
-If it shows a different version, run `nvm use 12` again.
+If it shows a different version, run `nvm use` again.
 
 ### Clean Install
 
