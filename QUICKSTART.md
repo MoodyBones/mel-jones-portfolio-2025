@@ -65,12 +65,14 @@ If it shows a different version, run `nvm use 12` again.
 
 ### Clean Install
 
-If you're experiencing issues with dependencies:
+If you're experiencing issues with dependencies, try a clean install using the lockfile:
 
 ```bash
-rm -rf node_modules package-lock.json
-npm install
+rm -rf node_modules
+npm ci
 ```
+
+Note: `npm ci` (clean install) uses the exact versions from package-lock.json, ensuring reproducible builds.
 
 ## Tech Stack
 
